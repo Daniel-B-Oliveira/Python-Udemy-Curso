@@ -127,6 +127,7 @@ def diagonais_matriz_3d(lista=list('None')):
 
     return todas_as_diagonais_list
 
+
 def diagonais_primas(lista=list('None')):
 
     diagonais_primas = list()
