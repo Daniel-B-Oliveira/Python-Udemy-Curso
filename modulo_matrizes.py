@@ -144,6 +144,7 @@ def diagonais_primas(lista=list('None')):
 
     return diagonais_primas
 
+
 diagonal = diagonais_matriz_3d(formar_matriz_3d(tamanhho=4))
 
 for cada_diag in diagonal:
