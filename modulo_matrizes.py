@@ -127,6 +127,25 @@ def diagonais_matriz_3d(lista=list('None')):
 
     return todas_as_diagonais_list
 
-diagonal = diagonais_matriz_3d(formar_matriz_3d(tamanhho=3))
+def diagonais_primas(lista=list('None')):
+
+    diagonais_primas = list()
+
+    for diagonal_tipo_n in lista:  # Diagonal 1, 2, 3 ou 4
+        for diagonais in diagonal_tipo_n:  # Cada diagonal individual
+            for numeros in diagonais:  # Cada número da diagonal
+                for multiplos in range(2, numeros):  # Cada antecessor do número (desconsidera 1 e ele mesmo)
+                    if (numeros % multiplos == 0):  # Se for divisível, a diagonal inteira não é prima
+                        contador_primo = 1
+            if contador_primo == 0 and 0 not in diagonais:
+                diagonais_primas.append(diagonais)
+            contador_primo = 0
+
+    return diagonais_primas
+
+diagonal = diagonais_matriz_3d(formar_matriz_3d(tamanhho=4))
+
 for cada_diag in diagonal:
     print(cada_diag)
+
+print(f'Diagonais primas: {diagonais_primas(diagonal)}')
