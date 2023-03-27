@@ -10,12 +10,26 @@ Métodos úteis:
 Create Read Update   Delete
         Criar, ler, alterar, apagar = lista[i] (CRUD)
 """
+# lista_a = [1, 2, 3]
+# lista_b = [4, 5, 6]
+# lista_c = lista_a + lista_b
+# lista_a.extend(lista_b)  # extend altera a lista a
+# print(lista_a)
+# print(lista_c)
 
-string = 'ABCDE' # 5 caracteres (len)
+#               /                       /                       /
 
-lista = [123, True , 'Daniel', 12.23]
+"""
+cuidados com os dados mutáveis
+= - copiado o valor (imutáveis)
+= - aponta para o mesmo valor na memoria (mutável)
+"""
 
-lista[2] = 'Teste'
-print(lista[2], type(lista))
-del lista[2]  # Evite ter que deletar algo em lista tão grandes
-print(lista[2], type(lista))
+lista_a = ['Luiz', 'Maria']
+lista_b = lista_a.copy()         # lista_b = lista_a relaciona as duas variaveis
+
+lista_a[0] = 'Qualquer coisa'
+
+print(lista_a)
+
+print(lista_b)
