@@ -45,3 +45,5 @@ print(par_impar(2))
 valor = 1,2,3,4,5,6,
 prg = par_impar(*valor)
 print(prg)
+
+
