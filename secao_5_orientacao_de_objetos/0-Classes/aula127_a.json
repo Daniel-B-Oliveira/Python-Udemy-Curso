@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "Daniel Barreto",
+    "endereco": "Rua sei lá das quantas",
+    "idade": 123
+  },
+  {
+    "nome": "Fernando Andrade",
+    "endereco": "Rua Minha Nossa Senhora",
+    "idade": 33
+  }
+]

@@ -70,7 +70,7 @@ tarefas_excluidas = []
 while True:
 
     print('\n\nComandos: [0]listar, [1]desfazer, [2]refazer')
-    menu = input('Digite uma tarefa: ')
+    menu = input('Digite uma tarefa: ').strip().lower()
 
     print()
 
