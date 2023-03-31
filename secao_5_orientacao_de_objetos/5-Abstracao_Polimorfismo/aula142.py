@@ -20,6 +20,7 @@ from abc import ABC, ABCMeta, abstractmethod
 # class Log(metaclass=ABCMeta):
 #     ...
 
+
 class Log(ABC):
     @abstractmethod
     def _log(self, msg):...
@@ -35,6 +36,7 @@ class LogPrintMixin(Log):
     def _log(self, msg):
         print(f'{msg} ({self.__class__.__name__})')
 
+    
 
 print(Log.__mro__)
 

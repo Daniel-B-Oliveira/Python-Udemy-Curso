@@ -32,3 +32,4 @@ class Foo(AbstractFoo):
 
 foo = Foo('bar')
 print(foo.name)
+print(foo.name)

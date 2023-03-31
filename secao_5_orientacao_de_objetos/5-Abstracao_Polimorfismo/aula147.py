@@ -19,6 +19,8 @@
 # __repr__(self) - str
 
 
+
+
 class Ponto:
     def __init__(self, x, y, z='string'):
         self.x = x
@@ -44,18 +46,28 @@ class Ponto:
         return Ponto(new_x, new_y)
 
 
-    def __gt__(self, other):
-        result_self = (self.x ** 2 + self.y ** 2)**1/2
-        result_other = (other.x ** 2 + other.y ** 2)**1/2
-        return result_self > result_other
+    
+    def __sub__(self, other):
+        new_x = self.x - other.x
+        new_y = self.y - other.y
+
+        return Ponto(new_x, new_y)
+
+    # def __gt__(self, other):
+    #     result_self = (self.x ** 2 + self.y ** 2)**1/2
+    #     result_other = (other.x ** 2 + other.y ** 2)**1/2
+    #     return result_self > result_other
 
 
 if __name__ == '__main__':
     p1 = Ponto(4, 2)
     p2 = Ponto(6, 4)
     p3 = p1 + p2
-    print(p3)
+    # print(p3)
 
-    print('P1 é maior que p2', p1 > p2)
-    print('P2 é maior que p1', p2 > p1)
+    a =2
+    d = (2).__add__(3)
+    print(d)
+    # print('P1 é maior que p2', p1 > p2)
+    # print('P2 é maior que p1', p2 > p1)
 

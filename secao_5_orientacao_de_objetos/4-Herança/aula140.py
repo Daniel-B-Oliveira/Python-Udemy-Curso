@@ -29,7 +29,7 @@
 # Use o método de classe Classe.mro()
 # Ou o atributo __mro__ (Dunder - Double Underscore)
 
-class A:
+class A(object):
     ...
 
     def quem_sou(self):
@@ -39,28 +39,32 @@ class A:
 class B(A):
     ...
 
-    # def quem_sou(self):
-    #     print('B')
+    def quem_sou(self):
+        print('B')
 
 
-class C(A):
+class C(B):
     ...
 
-    def quem_sou(self):
-        print('C')
+    # def quem_sou(self):
+    #     print('C')
 
 
-class D(B, C):
+class D(C):
     ...
 
     # def quem_sou(self):
     #     print('D')
 
 
-d = D()
-d.quem_sou()
+# d = D()
+# d.quem_sou()
 
 
 
-# print(D.__mro__)
+# print(A.__mro__)
+# print(B.__mro__)
+# print(C.__mro__)
+
+print(D.__mro__)
 print(D.mro())
