@@ -35,20 +35,21 @@ class Bank:
         return False
 
 
-    def _checa_se_conta_e_do_cliente(self, client, account):
+    def compatibility_check(self, client, account):
         if account is client.account:
-            print('_checa_se_conta_e_do_cliente', True)
+            print('Compatibility: check')
             return True
-        print('_checa_se_conta_e_do_cliente', False)
+        print('Compatibility rejected')
         return False
 
 
     def authentication (self, client: persons.Person, account: accounts.Account):
-        return self.branch_check(account) and \
+        if self.branch_check(account) and \
         self.client_check(client) and\
         self.account_check(account) and\
-        self._checa_se_conta_e_do_cliente(client, account)
-    
+        self.compatibility_check(client, account):
+            return('all IDs checked; free access')
+        return('all IDs checked; access denied')
 
     def __repr__(self):
         class_name = type(self).__name__
@@ -69,26 +70,6 @@ class Bank:
 #     bank.branch.extend([111, 222])
 
 #     print(bank.authentication(c1, c1.account))
+#     c1.account.deposit(123)
+#     c1.account.withdraw(120)
 
-#     print(c1)
-#     print(c1.account)
-#     print(c1.__dict__)
-
-#     print(bank)
-
-if __name__ == '__main__':
-    c1 = persons.Client('Luiz', 30)
-    cc1 = accounts.CheckingAccount(111, 111)
-
-    c1.account = cc1
-    c2 = persons.Client('Maria', 18)
-    cp1 = accounts.SavingsAcconut(111, 111)
-    c2.account = cp1
-    banco = Bank()
-    banco.clients.extend([c1, c2])
-    banco.accounts.extend([cc1, cp1])
-    banco.branch.extend([111, 222])
-
-    print(c1.__dict__)
-
-    banco.authentication(c1, cc1)
