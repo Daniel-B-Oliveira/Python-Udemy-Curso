@@ -1,0 +1,4 @@
+Threads 1, 2 e 3 são da versão antiga do curso,
+por isso os nomes dos arquivos estão fora do
+padrão.
+
