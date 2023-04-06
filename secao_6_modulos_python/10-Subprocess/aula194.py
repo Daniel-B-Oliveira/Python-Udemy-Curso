@@ -15,8 +15,35 @@
 # Retorno:
 # stdout, stderr, returncode e args
 # Importante: a codificação de caracteres do Windows pode ser
-# diferente. Tente usar cp1252, cp852, cp850 (ou outros). Linux e
-# mac, use utf_8.
+# diferente. Tente usar cp1252, cp852, cp850 (ou outros). USEI0> cp852
+#Linux e mac, use utf_8.
 # Comando de exemplo:
 # Windows: ping 127.0.0.1
 # Linux/Mac: ping 127.0.0.1 -c 4
+
+import subprocess
+import sys
+
+cmd = ['ping','127.0.0.1', '-c', '4']
+encondig = 'UTF-8'
+
+system = sys.platform
+
+if system == 'win32':
+    cmd = ['ping','127.0.0.1',]
+    encondig = 'cp852'
+
+proc = subprocess.run(
+    cmd,
+    capture_output=True,
+    text=True,
+    encoding=encondig
+    # shell=True 
+)
+
+# print()
+# print(proc.args)
+# print(proc.stderr)
+# print(proc.returncode)
+# print(proc.stdout.decode('cp852')) if text = False
+print(proc.stdout)
