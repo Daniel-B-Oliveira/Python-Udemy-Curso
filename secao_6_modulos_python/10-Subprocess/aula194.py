@@ -23,15 +23,21 @@
 
 import subprocess
 import sys
+from pathlib import Path
 
+
+CAMINHO_CHAVE = 'C:\\Users\\danie\\Documents\\curso_python\\udemy_python\\secao_6_modulos_python\\10-Subprocess\\Teste.pem'
+print(CAMINHO_CHAVE)
 cmd = ['ping','127.0.0.1', '-c', '4']
 encondig = 'UTF-8'
 
 system = sys.platform
 
 if system == 'win32':
-    cmd = ['ping','127.0.0.1',]
+    cmd = [f'ssh -i C:\\Users\\danie\\Documents\\curso_python\\udemy_python\\secao_6_modulos_python\\10-Subprocess\\Teste.pem ubuntu@44.212.21.106',]
     encondig = 'cp852'
+
+# ssh -i C:\\Users\\danie\\Documents\\curso_python\\udemy_python\\secao_6_modulos_python\\10-Subprocess\\Teste.pem ubuntu@44.212.21.106
 
 proc = subprocess.run(
     cmd,
