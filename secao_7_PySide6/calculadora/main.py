@@ -30,7 +30,7 @@ if __name__ == '__main__':
     window.addWidgetToVLayout(display)
 
     #Grid
-    buttonsGrid= ButtonGrid()
+    buttonsGrid= ButtonGrid(display)
     window.vLayout.addLayout(buttonsGrid)
 
     # window.setWindowTitle('Calculator')

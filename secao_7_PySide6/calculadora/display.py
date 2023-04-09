@@ -8,6 +8,8 @@ class Display(QLineEdit):
         self.configStyle()
     
     def configStyle(self):
+
+        margins = [TEXT_MAGIN for n in  range(4)]
         
         self.setStyleSheet(f'font-size: {BIG_FONT_SIZE}px')
         self.setMinimumHeight(BIG_FONT_SIZE*2)
@@ -15,4 +17,4 @@ class Display(QLineEdit):
         self.setMinimumWidth(MINIMUN_WIDTH)
 
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
-        self.setTextMargins(*[TEXT_MAGIN for n in  range(4)])
+        self.setTextMargins(15, 15, 15, 15)
