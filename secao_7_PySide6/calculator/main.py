@@ -22,7 +22,7 @@ if __name__ == '__main__':
     app.setWindowIcon(icon)
 
     #Info
-    info = Info('2.0 ^ 10 = 1024')
+    info = Info('Operation')
     window.addWidgetToVLayout(info)
 
     #Display
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     window.addWidgetToVLayout(display)
 
     #Grid
-    buttonsGrid= ButtonGrid(display)
+    buttonsGrid= ButtonGrid(display, info, window)
     window.vLayout.addLayout(buttonsGrid)
 
     # window.setWindowTitle('Calculator')
