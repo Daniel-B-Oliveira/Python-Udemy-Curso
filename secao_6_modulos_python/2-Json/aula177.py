@@ -30,3 +30,5 @@ with open(CAMINHO_ABSOLUTO_ARQUIVO, 'r') as arquivo:
 
     print(filme_do_json)
 
+print(123, 'abaixo')
+print(os.path)
