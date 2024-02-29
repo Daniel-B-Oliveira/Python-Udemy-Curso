@@ -30,13 +30,38 @@ with connection:
 
     # Manipulação de dados
     with connection.cursor() as cursor:
-        result = cursor.execute(
+        sql = (
             f'INSERT INTO {TALBE_NAME} '
-                '(nome, idade) VALUES ("Pessoa", 23) '
+            '(nome, idade) '
+            'VALUES '
+            '(%s, %s) '
         )
-        print(cursor)
-        print(result)
+        
+        data = ("Daniel", 18)
+        result = cursor.execute(sql,data)
+        
+        print(sql, data)
+        # print(result)
     connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'INSERT INTO {TALBE_NAME} '
+            '(nome, idade) '
+            'VALUES '
+            '(%(name)s, %(age)s) '
+        )
+        
+        data2 = {
+                "age": 143,
+                "name": "Josepha",
+            }
+        result = cursor.execute(sql,data2)
+        
+        print(sql, data2)
+        # print(result)
+    connection.commit()
+
         
 
 
